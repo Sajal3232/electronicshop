@@ -39,3 +39,50 @@ Route::get('/category/mailus',[
 ]);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home',[
+    'uses'=>'App\Http\Controllers\HomeController@index',
+    'as'=>'/'
+]);
+Route::get('/category/add',[
+    'uses'=>'App\Http\Controllers\CategoryController@addcategoryinfo',
+    'as'=>'add-category'
+]);
+Route::post('/category/new-category',[
+    'uses'=>'App\Http\Controllers\CategoryController@savecategoryinfo',
+    'as'=>'new-category'
+]);
+Route::get('/category/manage',[
+    'uses'=>'App\Http\Controllers\CategoryController@manage',
+    'as'=>'manage-category'
+]);
+Route::get('/category/unpublished/{id}',[
+    'uses'=>'App\Http\Controllers\CategoryController@unpublishedinfo',
+    'as'=>'category/unpublished'
+]);
+Route::get('/category/published/{id}',[
+    'uses'=>'App\Http\Controllers\CategoryController@publishedinfo',
+    'as'=>'category/published'
+]);
+Route::get('/category/edit/{id}',[
+    'uses'=>'App\Http\Controllers\CategoryController@editcategoryinfo',
+    'as'=>'category/edit'
+]);
+Route::post('/category/update',[
+    'uses'=>'App\Http\Controllers\CategoryController@updatecategoryinfo',
+    'as'=>'category/update'
+]);
+Route::get('/category/delete/{id}',[
+    'uses'=>'App\Http\Controllers\CategoryController@deletecategoryinfo',
+    'as'=>'category/delete'
+]);
+
+
