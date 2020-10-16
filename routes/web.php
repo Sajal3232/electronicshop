@@ -21,9 +21,13 @@ Route::get('/',[
     'uses'=>'App\Http\Controllers\ElectronicShopController@index',
     'as'=>'/'
 ]);
-Route::get('/category/mobails',[
+Route::get('/category/products/{id}',[
     'uses'=>'App\Http\Controllers\ElectronicShopController@categoryproducts',
     'as'=>'category-products'
+]);
+Route::get('/category/product-details/{id}',[
+    'uses'=>'App\Http\Controllers\ElectronicShopController@productdetails',
+    'as'=>'product-details'
 ]);
 Route::get('/category/accessories',[
     'uses'=>'App\Http\Controllers\ElectronicShopController@categoryproductsaccessories',
@@ -83,6 +87,32 @@ Route::post('/category/update',[
 Route::get('/category/delete/{id}',[
     'uses'=>'App\Http\Controllers\CategoryController@deletecategoryinfo',
     'as'=>'category/delete'
+]);
+////brand
+
+Route::get('/brand/add',[
+    'uses'=>'App\Http\Controllers\BrandController@addbrandinfo',
+    'as'=>'add-brand'
+]);
+Route::post('/brand/save',[
+    'uses'=>'App\Http\Controllers\BrandController@savebrandinfo',
+    'as'=>'new-brand'
+]);
+
+//product
+ 
+Route::get('/product/add',[
+    'uses'=>'App\Http\Controllers\ProductController@index',
+    'as'=>'add-product'
+]);
+Route::post('/product/save',[
+    'uses'=>"App\Http\Controllers\productController@saveproductinfo",
+    'as'=>'product/new'
+]);
+
+Route::get('/product/manage',[
+    'uses'=>'App\Http\Controllers\ProductController@manageproductinfo',
+    'as'=>'manage-product'
 ]);
 
 

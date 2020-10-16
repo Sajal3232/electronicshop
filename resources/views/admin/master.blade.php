@@ -17,6 +17,10 @@
 
   <!-- Custom styles for this template-->
   <link href="{{asset('/')}}/admin/css/sb-admin-2.min.css" rel="stylesheet">
+  <script src="{{asset('/')}}admin/ckeditor/ckeditor.js"></script>
+	<script src="{{asset('/')}}admin/ckeditor/samples/js/sample.js"></script>
+	<link rel="stylesheet" href="{{asset('/')}}admin/ckeditor/samples/css/samples.css">
+	<link rel="stylesheet" href="{{asset('/')}}admin/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
 
 </head>
 
@@ -114,6 +118,9 @@
        })
      })
   </script>
+<script>
+	initSample();
+</script>
 
 
 </body>
